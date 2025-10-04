@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { 
   TrendingUp, Award, Target, Calendar, BarChart3, 
   CheckCircle2, Clock, AlertCircle, Trophy,
-  ArrowRight, Download, ExternalLink, RefreshCw,
+  ArrowRight, ExternalLink, RefreshCw,
   Sparkles, DollarSign, MapPin, Users, FileText, Settings
 } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
@@ -19,7 +19,7 @@ const TOOL_URLS = {
 const generateUserId = () => {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
     const r = Math.random() * 16 | 0;
-    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    const v = c === 'x' ? r : ((r & 0x3) | 0x8);
     return v.toString(16);
   });
 };
