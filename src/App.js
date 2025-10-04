@@ -234,12 +234,21 @@ const App = () => {
   const cta = getRecommendedCTA(scores.total);
 
   // ツールを開く
-  const openTool = useCallback((toolName) => {
-    const url = TOOL_URLS[toolName];
-    if (!url) return;
-    
-    alert(`【デモモード】\n\n実際の環境では以下のURLに遷移します：\n${url}\n\n※このダッシュボードのデータを引き継ぎます\n\n遷移時のパラメータ：\n・ユーザーID: ${userData.userId}\n・業種: ${userData.companyInfo.industry}\n・企業規模: ${userData.companyInfo.size}\n・現在のスコア: ${scores.total}点`);
-  }, [userData, scores.total]);
+ const openTool = useCallback((toolName) => {
+  const url = TOOL_URLS[toolName];
+  if (!url) return;
+  
+  const params = new URLSearchParams({
+    from: 'dashboard',
+    userId: userData.userId,
+    industry: userData.companyInfo.industry || '',
+    size: userData.companyInfo.size || '',
+    score: userData.totalScore.toString()
+  });
+  
+  // 実際のURLに遷移
+  window.location.href = `${url}?${params.toString()}`;
+}, [userData]);
 
   // データリセット
   const resetData = useCallback(() => {
