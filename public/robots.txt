@@ -1,0 +1,14 @@
+# robots.txt for dounyu.maroi.co.jp
+
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://dounyu.maroi.co.jp/sitemap.xml
+
+Crawl-delay: 1

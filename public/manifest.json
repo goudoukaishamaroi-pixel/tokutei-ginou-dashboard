@@ -1,0 +1,16 @@
+{
+  "short_name": "MAROI導入準備度",
+  "name": "特定技能外国人 導入準備度ダッシュボード",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#3b82f6",
+  "background_color": "#ffffff",
+  "description": "特定技能外国人雇用の導入準備度を可視化するダッシュボード"
+}
